@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 区别于 commonJS 中当模块中的简单数据类型修改之后，不会影响到 foo.js 中打印出来的 name 值，由于 ES Module 中存在模块环境记录，
+        所以当 name 修改之后，无论 name 是简单数据类型还是复杂数据类型都会同步修改 -->
+    <script src="./modules/foo.js" type="module"></script>
+</body>
+
+</html>
