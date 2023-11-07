@@ -1,0 +1,32 @@
+{
+  "name": "7ong",
+  "version": "1.2.2",
+  "description": "CLI front-end development tools",
+  "main": "index.js",
+  "bin": {
+    "7ong": "index.js"
+  },
+  "scripts": {
+    "serve": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "react",
+    "CLI",
+    "component"
+  ],
+  "author": "7ong",
+  "license": "MIT",
+  "homepage": "https://github.com/coder7ong/7ong-vue-temp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coder7ong/7ong-vue-temp"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "download-git-repo": "^3.0.2",
+    "ejs": "^3.1.5",
+    "open": "^7.3.0"
+  }
+}
