@@ -1,17 +1,24 @@
+const connections = require("../app/database")
+
+// 使用类可以实现注册多个方法，将通过类 new 出来的对象作为结果导出，调用对象中的方法
 class UserService {
+  //1. 注册用户
   async createUser(payload) {
     // 获取用户请求传递的参数
-    // 查询数据库
+    const { username, password } = payload
+    // 插入数据库
+    const statement = `INSERT INTO coderhub_users (username, password) VALUES (?, ?)`
+    const result = await connections.execute(statement, [username, password])
     // 返回数据
-    return (
-      "用户注册分层结构代码完成" +
-      "\n" +
-      "username：" +
-      payload.username +
-      "\n" +
-      "password：" +
-      payload.password
-    )
+    return result
+  }
+
+  //2. 通过 userName 查询数据表判断用户名是否已被注册
+  async getUserByName(username) {
+    // 根据 userName 查询数据库
+    const statement = `SELECT * FROM coderhub_users WHERE username = ?`
+    const result = await connections.execute(statement, [username])
+    return result
   }
 }
 
