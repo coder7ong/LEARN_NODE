@@ -211,6 +211,12 @@ Node_Notes
 │  ├─ 10_sequelize的多对多操作.js
 │  ├─ package-lock.json
 │  └─ package.json
+├─ 09_cookie-session的设置
+│  ├─ 01_客户端设置cookie.js
+│  ├─ 02_Express框架设置cookie.js
+│  ├─ 03_Koa服务器设置cookie.js
+│  ├─ 04_Koa服务器设置cookie并且通过其他接口访问设置的cookie.js
+│  └─ 05_Koa服务器设置session.js
 ├─ coderhub
 │  ├─ .env
 │  ├─ app
@@ -221,18 +227,24 @@ Node_Notes
 │  ├─ constants
 │  │  └─ error-types.js
 │  ├─ controller
+│  │  ├─ anth.controller.js
 │  │  └─ user.controller.js
 │  ├─ main.js
 │  ├─ middleware
+│  │  ├─ auth.middleware.js
 │  │  └─ user.middleware.js
 │  ├─ package-lock.json
 │  ├─ package.json
 │  ├─ README.md
 │  ├─ router
+│  │  ├─ auth.router.js
+│  │  ├─ index.js
 │  │  └─ user.router.js
 │  ├─ service
+│  │  ├─ auth.service.js
 │  │  └─ user.service.js
 │  └─ utils
+│     └─ encrypt-password.js
 └─ README.md
 
 ```
