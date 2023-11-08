@@ -2,7 +2,10 @@
 const errorTypes = require("../constants/error-types")
 // 导入根据用户名获取到的数据集
 const service = require("../service/user.service")
+// 导入密码加密函数 md5password
+const md5password = require("../utils/encrypt-password")
 
+// 校验账号密码中间件
 const verifyUser = async (ctx, next) => {
   //1. 判断用户名和密码不能为空
   const { username, password } = ctx.request.body
@@ -20,8 +23,17 @@ const verifyUser = async (ctx, next) => {
     return ctx.app.emit("error", error, ctx)
   }
 
-  // 必须调用next才会执行下个中间件，await等待下个中间件异步操作执行完成有结果才返回最终结果，否则有问题
+  // next执行下个中间件，await等待下个中间件异步操作执行完成才返回最终结果
   await next()
 }
 
-module.exports = { verifyUser }
+// 密码加密中间件
+const encryptPassword = async (ctx, next) => {
+  // 获取密码
+  const { password } = ctx.request.body
+  // 密码加密
+  ctx.request.body.password = md5password(password)
+  await next()
+}
+
+module.exports = { verifyUser, encryptPassword }

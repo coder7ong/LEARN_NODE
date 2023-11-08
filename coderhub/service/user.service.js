@@ -18,7 +18,8 @@ class UserService {
     // 根据 userName 查询数据库
     const statement = `SELECT * FROM coderhub_users WHERE username = ?`
     const result = await connections.execute(statement, [username])
-    return result
+    // 数组中第一个才是查询到的数组
+    return result[0]
   }
 }
 
