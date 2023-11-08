@@ -198,7 +198,7 @@ Node_Notes
 │  ├─ package-lock.json
 │  ├─ package.json
 │  └─ phone.json
-├─ 08_Node连接MySQL数据库
+├─ 08_Node操作MySQL
 │  ├─ 01_通过query方法进行查询.js
 │  ├─ 02_预处理语句.js
 │  ├─ 03_SQL注入.js
@@ -209,6 +209,21 @@ Node_Notes
 │  ├─ 08_sequelize的单表操作.js
 │  ├─ 09_sequelize的一对多操作.js
 │  ├─ 10_sequelize的多对多操作.js
+│  ├─ navicat数据表
+│  │  └─ learn_mysql.sql
+│  ├─ navicat查询语句
+│  │  ├─ 01_DDL-对数据库的操作.sql
+│  │  ├─ 02_DDL-对数据表的操作.sql
+│  │  ├─ 03_DML-对数据库的增删改.sql
+│  │  ├─ 04_DQL-数据的查询操作.sql
+│  │  ├─ 05_HAVING的使用.sql
+│  │  ├─ 06_多表的设计.sql
+│  │  ├─ 07_SQL JOIN.sql
+│  │  ├─ 08_笛卡尔乘积.sql
+│  │  ├─ 09_多对多关系-设计.sql
+│  │  ├─ 10_对象和数组类型.sql
+│  │  ├─ 11_ORM的使用.sql
+│  │  └─ 12_coderhub新建数据库.sql
 │  ├─ package-lock.json
 │  └─ package.json
 ├─ 09_cookie-session的设置

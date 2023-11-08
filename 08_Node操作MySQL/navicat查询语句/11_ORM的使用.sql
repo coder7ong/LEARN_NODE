@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `User` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `age` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `unique_email` (`email` ASC)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
