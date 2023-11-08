@@ -231,7 +231,8 @@ Node_Notes
 │  ├─ 02_Express框架设置cookie.js
 │  ├─ 03_Koa服务器设置cookie.js
 │  ├─ 04_Koa服务器设置cookie并且通过其他接口访问设置的cookie.js
-│  └─ 05_Koa服务器设置session.js
+│  ├─ 05_Koa服务器设置session.js
+│  └─ 06_客户端无法设置session.js
 ├─ coderhub
 │  ├─ .env
 │  ├─ app
