@@ -1,4 +1,3 @@
-
 ```
 Node_Notes
 ├─ 01_开发脚手架工具
@@ -156,16 +155,84 @@ Node_Notes
 │     ├─ 20220123222213_2899a.jpeg
 │     ├─ 5273f12770bc89295ecab1ca8952f762
 │     └─ 微信图片_20230710172907.jpg
-└─ 05_Koa框架
-   ├─ 01_koa初体验.js
-   ├─ 02_中间件-注册中间件函数.js
-   ├─ 03_Koa创建服务器.js
-   ├─ 04_中间件-错误处理.js
-   ├─ 05_中间件-使用案例.js
-   ├─ 06_Koa 路由的使用.js
-   ├─ package-lock.json
-   ├─ package.json
-   └─ router
-      └─ user.js
+├─ 05_Koa框架
+│  ├─ 01_koa初体验.js
+│  ├─ 02_中间件-注册中间件函数.js
+│  ├─ 03_Koa创建服务器.js
+│  ├─ 04_中间件-错误处理.js
+│  ├─ 05_中间件-使用案例.js
+│  ├─ 06_Koa 路由的使用.js
+│  ├─ 07_Koa中间件获取参数.js
+│  ├─ 08_路由中定义参数获取参数-params.js
+│  ├─ 09_路由中定义参数获取参数-query.js
+│  ├─ 10_解析参数-json.js
+│  ├─ 11_解析参数-form-data.js
+│  ├─ 12_解析参数-x-www-form-urlencoded.js
+│  ├─ 13_是否为可用路由.js
+│  ├─ 14_Koa 响应数据.js
+│  ├─ 15_Koa 错误处理方式.js
+│  ├─ 16_Koa 洋葱模型.js
+│  ├─ 17_Koa 洋葱模型-res.body.js
+│  ├─ 18_Koa 洋葱模型-使用错误res.end.js
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ router
+│  │  └─ user.js
+│  └─ uploads
+│     └─ 1698804492698-20220123222213_2899a.jpeg
+├─ 06_Koa对比Express
+│  ├─ 01_express实现-同步数据.js
+│  ├─ 02_express实现-res.end在next之前.js
+│  ├─ 03_express实现-res.end在next之后.js
+│  ├─ 04_express 实现-异步数据.js
+│  ├─ 05_express 实现-异步数据返回数据放在最后中间件.js
+│  ├─ 06_express 实现-异步请求中间件作为函数.js
+│  ├─ 07_Koa 实现-同步数据.js
+│  ├─ 08_Koa 实现-异步数据.js
+│  ├─ 09_express实现-res.end.js
+│  ├─ 10_express实现-使用错误 res.body.js
+│  ├─ package-lock.json
+│  └─ package.json
+├─ 07_LEARN_MySQL
+│  ├─ insertData.js
+│  ├─ package-lock.json
+│  ├─ package.json
+│  └─ phone.json
+├─ 08_Node连接MySQL数据库
+│  ├─ 01_通过query方法进行查询.js
+│  ├─ 02_预处理语句.js
+│  ├─ 03_SQL注入.js
+│  ├─ 04_预处理语句防止SQL注入.js
+│  ├─ 05_连接池-mysql.js
+│  ├─ 06_连接池-mysql2.js
+│  ├─ 07_ORM-定义用户模型.js
+│  ├─ 08_sequelize的单表操作.js
+│  ├─ 09_sequelize的一对多操作.js
+│  ├─ 10_sequelize的多对多操作.js
+│  ├─ package-lock.json
+│  └─ package.json
+├─ coderhub
+│  ├─ .env
+│  ├─ app
+│  │  ├─ config.js
+│  │  ├─ database.js
+│  │  ├─ error-handle.js
+│  │  └─ index.js
+│  ├─ constants
+│  │  └─ error-types.js
+│  ├─ controller
+│  │  └─ user.controller.js
+│  ├─ main.js
+│  ├─ middleware
+│  │  └─ user.middleware.js
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ README.md
+│  ├─ router
+│  │  └─ user.router.js
+│  ├─ service
+│  │  └─ user.service.js
+│  └─ utils
+└─ README.md
 
 ```

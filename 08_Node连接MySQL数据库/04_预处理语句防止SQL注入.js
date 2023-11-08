@@ -31,3 +31,12 @@ connection.query(statement, [username, password], (err, results) => {
     console.log("登录失败！")
   }
 })
+
+// connection.query 和 connection.execute 的区别？
+// connection.query: 使用问号占位符(?)来表示参数，并将参数作为数组传递给查询。例如：
+// connection.query('SELECT * FROM users WHERE id = ?', [userId], function (error, results, fields) {
+
+//   });
+// connection.execute: 使用命名占位符(:name)或问号占位符(?)来表示参数，并将参数作为对象传递给查询。例如：
+// connection.execute('SELECT * FROM users WHERE id = :id', { id: userId }, function (error, results, fields) {
+//   });
