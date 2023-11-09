@@ -40,6 +40,11 @@ const verifyToken = async (ctx, next) => {
   //5. 获取 token
   const authorization = ctx.request.headers.authorization
   const token = authorization.replace("Bearer ", "")
+  if (!authorization) {
+    // 抛出错误需要携带 token
+    const error = new Error(errorTypes.UNAUTHORIZATION)
+    return ctx.app.emit("error", error, ctx)
+  }
   try {
     const result = jwt.verify(token, PUBLIC_KEY, {
       algorithms: ["RS256"], //6. 指定算法，指定算法为数组格式即可以指定多种解密算法
