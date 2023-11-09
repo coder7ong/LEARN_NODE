@@ -1,0 +1,8 @@
+{
+  "description": "",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "koa": "^2.14.2",
+    "koa-router": "^12.0.1"
+  }
+}
