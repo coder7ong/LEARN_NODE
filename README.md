@@ -1,3 +1,4 @@
+
 ```
 Node_Notes
 ├─ 01_开发脚手架工具
@@ -233,6 +234,26 @@ Node_Notes
 │  ├─ 04_Koa服务器设置cookie并且通过其他接口访问设置的cookie.js
 │  ├─ 05_Koa服务器设置session.js
 │  └─ 06_客户端无法设置session.js
+├─ 10_Token的非对称加密
+│  ├─ 01_自定义私钥生成和解析 Token
+│  │  ├─ index.js
+│  │  ├─ package-lock.json
+│  │  └─ package.json
+│  └─ 02_生成的私钥公钥进行生成解析 Token
+│     ├─ index.js
+│     ├─ keys
+│     │  ├─ private.key
+│     │  └─ public.key
+│     ├─ package-lock.json
+│     ├─ package.json
+│     └─ secretKey.js
+├─ 11_Node文件执行的相对路径
+│  ├─ app
+│  │  └─ index.js
+│  ├─ module
+│  │  └─ module.js
+│  ├─ package-lock.json
+│  └─ package.json
 ├─ coderhub
 │  ├─ .env
 │  ├─ app
