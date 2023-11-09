@@ -5,10 +5,7 @@ coderhub
 │  ├─ config.js
 │  ├─ database.js
 │  ├─ error-handle.js
-│  ├─ index.js
-│  └─ keys
-│     ├─ private.key
-│     └─ public.key
+│  └─ index.js
 ├─ constants
 │  └─ error-types.js
 ├─ controller
