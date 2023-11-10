@@ -45,6 +45,19 @@ class MomentController {
     const result = await momentService.deleteMomentByIds(userId, momentIds)
     ctx.body = result
   }
+
+  // 修改动态
+  async updateMoment(ctx, next) {
+    const momentId = ctx.request.body.momentId
+    const content = ctx.request.body.content
+    const userId = ctx.user.id
+    const result = await momentService.updateMomentById(
+      userId,
+      momentId,
+      content
+    )
+    ctx.body = result
+  }
 }
 
 module.exports = new MomentController()

@@ -7,6 +7,7 @@ const {
   list,
   deleteMoment,
   deleteMoments,
+  updateMoment,
 } = require("../controller/moment.controller")
 
 const momentRouter = new Router({ prefix: "/moment" })
@@ -21,5 +22,7 @@ momentRouter.get("/", list)
 momentRouter.delete("/:momentId", verifyToken, deleteMoment)
 // 删除多条动态信息
 momentRouter.delete("/", verifyToken, deleteMoments)
+// 修改动态
+momentRouter.patch("/", verifyToken, updateMoment)
 
 module.exports = momentRouter
