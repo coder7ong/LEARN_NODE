@@ -1,6 +1,9 @@
 const Router = require("koa-router")
 
-const { verifyToken } = require("../middleware/auth.middleware")
+const {
+  verifyToken,
+  verifyPermission,
+} = require("../middleware/auth.middleware")
 const {
   create,
   detail,
@@ -19,10 +22,10 @@ momentRouter.get("/:momentId", detail)
 // 查询多条动态详情
 momentRouter.get("/", list)
 // 删除某一条动态信息
-momentRouter.delete("/:momentId", verifyToken, deleteMoment)
+momentRouter.delete("/:momentId", verifyToken, verifyPermission, deleteMoment)
 // 删除多条动态信息
 momentRouter.delete("/", verifyToken, deleteMoments)
 // 修改动态
-momentRouter.patch("/", verifyToken, updateMoment)
+momentRouter.patch("/", verifyToken, verifyPermission, updateMoment)
 
 module.exports = momentRouter

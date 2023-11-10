@@ -8,6 +8,8 @@ const USER_DOSE_NOT_EXISTS = "username_does_not_exist"
 const PASSWORD_IS_INCORRENT = "password_is_incorrent"
 // token 无效
 const UNAUTHORIZATION = "Unauthorization"
+// 没有权限
+const UNPERMISSION = "Unpermission"
 
 module.exports = {
   NAME_OR_PASSWORD_IS_REQUIRED,
@@ -15,4 +17,5 @@ module.exports = {
   USER_DOSE_NOT_EXISTS,
   PASSWORD_IS_INCORRENT,
   UNAUTHORIZATION,
+  UNPERMISSION,
 }

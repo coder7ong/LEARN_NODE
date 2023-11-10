@@ -1,8 +1,8 @@
-const service = require("../service/user.service")
+const userService = require("../service/user.service")
 
 class UserController {
   async createUser(ctx, next) {
-    const result = await service.createUser(ctx.request.body)
+    const result = await userService.createUser(ctx.request.body)
     ctx.body = result
   }
 }

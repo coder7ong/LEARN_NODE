@@ -30,6 +30,7 @@ coderhub
 ├─ service
 │  ├─ auth.service.js
 │  ├─ moment.service.js
+│  ├─ permission.service.js
 │  └─ user.service.js
 └─ utils
    └─ encrypt-password.js

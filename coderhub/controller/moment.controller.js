@@ -30,11 +30,8 @@ class MomentController {
 
   // 删除某一条动态
   async deleteMoment(ctx, next) {
-    //1. 获取传入的动态 id
     const momentId = ctx.params.momentId
-    // 2. 获取当前用户的 id
-    const userId = ctx.user.id
-    const result = await momentService.deleteMomentById(userId, momentId)
+    const result = await momentService.deleteMomentById(momentId)
     ctx.body = result
   }
 
@@ -50,12 +47,7 @@ class MomentController {
   async updateMoment(ctx, next) {
     const momentId = ctx.request.body.momentId
     const content = ctx.request.body.content
-    const userId = ctx.user.id
-    const result = await momentService.updateMomentById(
-      userId,
-      momentId,
-      content
-    )
+    const result = await momentService.updateMomentById(content, momentId)
     ctx.body = result
   }
 }

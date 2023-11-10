@@ -33,9 +33,9 @@ class MomentService {
     return result
   }
 
-  async deleteMomentById(userId, momentId) {
-    const statement = `DELETE FROM moment WHERE user_id = ? AND id = ?`
-    const result = await connection.query(statement, [userId, momentId])
+  async deleteMomentById(momentId) {
+    const statement = `DELETE FROM moment WHERE id = ?`
+    const result = await connection.execute(statement, [momentId])
     return result
   }
 
@@ -47,14 +47,17 @@ class MomentService {
     return result
   }
 
-  async updateMomentById(userId, momentId, content) {
-    const statement = `UPDATE moment SET content = ? WHERE user_id = ? AND id = ?`
-    const result = await connection.query(statement, [
-      content,
-      userId,
-      momentId,
-    ])
+  async updateMomentById(content, momentId) {
+    const statement = `UPDATE moment SET content = ? WHERE id = ?`
+    const [result] = await connection.execute(statement, [content, momentId])
     return result
+  }
+
+  // 查询用户是否用权限
+  async checkMoment(momentId, userId) {
+    const statement = `SELECT * FROM moment WHERE id = ? AND user_id = ?`
+    const [result] = await connection.execute(statement, [momentId, userId])
+    return result.length === 0 ? false : true
   }
 }
 

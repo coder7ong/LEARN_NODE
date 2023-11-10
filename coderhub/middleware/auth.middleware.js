@@ -1,9 +1,13 @@
 const errorTypes = require("../constants/error-types")
-const service = require("../service/auth.service")
+
+const userService = require("../service/user.service")
+const momentService = require("../service/moment.service")
+
 const md5password = require("../utils/encrypt-password")
 const jwt = require("jsonwebtoken")
 const { PUBLIC_KEY } = require("../app/config")
 
+// 验证登录用户名密码格式是否正确中间件
 const verifyLogin = async (ctx, next) => {
   //1. 获取用户名和密码
   const { username, password } = ctx.request.body
@@ -15,7 +19,7 @@ const verifyLogin = async (ctx, next) => {
   }
 
   //3. 判断用户是否存在
-  const result = await service.getUserByName(username)
+  const result = await userService.getUserByName(username)
   //再取出来第一个用户
   const user = result[0]
   // 赋值到 ctx 对象上，以便登录成功之后返回 user 里面的信息
@@ -60,4 +64,23 @@ const verifyToken = async (ctx, next) => {
   }
 }
 
-module.exports = { verifyLogin, verifyToken }
+// 校验更新删除是否有权限中间件
+const verifyPermission = async (ctx, next) => {
+  // 获取参数
+  const userId = ctx.user.id
+  const momentId = ctx.request.body.momentId || ctx.params.momentId
+
+  //查询是否有权限
+  try {
+    const isPermission = await momentService.checkMoment(momentId, userId)
+    if (!isPermission) {
+      const error = new Error(errorTypes.UNPERMISSION)
+      return ctx.app.emit("error", error, ctx)
+    }
+  } catch (error) {
+    console.log(error)
+  }
+  await next()
+}
+
+module.exports = { verifyLogin, verifyToken, verifyPermission }
