@@ -27,6 +27,24 @@ class MomentController {
     const result = await momentService.getMomentList(offset, size)
     ctx.body = result
   }
+
+  // 删除某一条动态
+  async deleteMoment(ctx, next) {
+    //1. 获取传入的动态 id
+    const momentId = ctx.params.momentId
+    // 2. 获取当前用户的 id
+    const userId = ctx.user.id
+    const result = await momentService.deleteMomentById(userId, momentId)
+    ctx.body = result
+  }
+
+  // 删除多条动态信息
+  async deleteMoments(ctx, next) {
+    const momentIds = ctx.request.body.momentIds
+    const userId = ctx.user.id
+    const result = await momentService.deleteMomentByIds(userId, momentIds)
+    ctx.body = result
+  }
 }
 
 module.exports = new MomentController()

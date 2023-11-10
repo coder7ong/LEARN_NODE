@@ -32,6 +32,20 @@ class MomentService {
     const [result] = await connection.execute(statement, [offset, size])
     return result
   }
+
+  async deleteMomentById(userId, momentId) {
+    const statement = `DELETE FROM moment WHERE user_id = ? AND id = ?`
+    const result = await connection.query(statement, [userId, momentId])
+    return result
+  }
+
+  async deleteMomentByIds(userId, momentIds) {
+    const statement = `DELETE FROM moment WHERE user_id = ? AND id IN (${momentIds.join(
+      ","
+    )})`
+    const result = await connection.query(statement, [userId, momentIds])
+    return result
+  }
 }
 
 module.exports = new MomentService()
