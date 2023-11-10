@@ -28,9 +28,7 @@ coderhub
 │  ├─ moment.router.js
 │  └─ user.router.js
 ├─ service
-│  ├─ auth.service.js
 │  ├─ moment.service.js
-│  ├─ permission.service.js
 │  └─ user.service.js
 └─ utils
    └─ encrypt-password.js
