@@ -13,6 +13,7 @@ coderhub
 │  └─ error-types.js
 ├─ controller
 │  ├─ anth.controller.js
+│  ├─ comment.controller.js
 │  ├─ moment.controller.js
 │  └─ user.controller.js
 ├─ main.js
@@ -24,6 +25,7 @@ coderhub
 ├─ README.md
 ├─ router
 │  ├─ auth.router.js
+│  ├─ comment.router.js
 │  ├─ index.js
 │  ├─ moment.router.js
 │  └─ user.router.js
