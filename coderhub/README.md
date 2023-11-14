@@ -19,6 +19,7 @@ coderhub
 ├─ main.js
 ├─ middleware
 │  ├─ auth.middleware.js
+│  ├─ comment.middleware.js
 │  └─ user.middleware.js
 ├─ package-lock.json
 ├─ package.json
@@ -30,6 +31,7 @@ coderhub
 │  ├─ moment.router.js
 │  └─ user.router.js
 ├─ service
+│  ├─ comment.service.js
 │  ├─ moment.service.js
 │  └─ user.service.js
 └─ utils

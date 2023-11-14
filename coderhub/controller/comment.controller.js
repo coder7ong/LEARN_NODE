@@ -35,6 +35,13 @@ class CommentController {
     const result = await commentService.deleteCommentById(commentId)
     ctx.body = result
   }
+
+  // 获取评论列表
+  async list(ctx, next) {
+    const { momentId } = ctx.query
+    const result = await commentService.getCommentListByMomentId(momentId)
+    ctx.body = result
+  }
 }
 
 module.exports = new CommentController()

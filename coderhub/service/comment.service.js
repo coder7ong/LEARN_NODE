@@ -43,6 +43,23 @@ class CommentService {
     const [result] = await connection.execute(statement, [commentId, userId])
     return result[0]
   }
+
+  // 获取动态下的评论列表
+  async getCommentListByMomentId(momentId) {
+    const statement = `
+      SELECT
+        m.id,
+        m.content,
+        m.comment_id commentId,
+        m.createAt createTime,
+        JSON_OBJECT( 'id', u.id, 'name', u.username ) USER 
+      FROM COMMENT m
+      LEFT JOIN coderhub_users u ON u.id = m.user_id 
+      WHERE moment_id = 2
+      `
+    const [result] = await connection.execute(statement, [momentId])
+    return result
+  }
 }
 
 module.exports = new CommentService()

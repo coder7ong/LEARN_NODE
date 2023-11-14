@@ -5,6 +5,7 @@ const {
   reply,
   update,
   deleteComment,
+  list,
 } = require("../controller/comment.controller")
 const { verifyPermission } = require("../middleware/comment.middleware")
 
@@ -23,5 +24,8 @@ commentRouter.delete(
   verifyPermission,
   deleteComment
 )
+
+// 获取动态下的评论列表
+commentRouter.get("/", list)
 
 module.exports = commentRouter
