@@ -50,6 +50,27 @@ class MomentController {
     const result = await momentService.updateMomentById(content, momentId)
     ctx.body = result
   }
+
+  // 给动态添加标签
+  async addLabels(ctx, next) {
+    // 获取经过验证标签是否存在中间件处理过的 labels
+    const { labels } = ctx
+    const { momentId } = ctx.params
+
+    // 添加所有标签
+    labels.forEach(async (label) => {
+      // 判断动态中是否已经存在该标签
+      const isExist = await momentService.hasLabel(label, momentId)
+      if (!isExist) {
+        // 不存在才需要在moment_label关系表中添加标签和动态的关系
+        momentService.addLabel(momentId, label.id)
+      }
+    })
+    ctx.body = {
+      code: 200,
+      message: "为动态添加标签成功~",
+    }
+  }
 }
 
 module.exports = new MomentController()

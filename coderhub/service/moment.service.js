@@ -12,15 +12,21 @@ class MomentService {
     SELECT
 	  m.id AS id, m.content AS content, m.createAt AS createTime, m.updateAt AS updateTime,
       JSON_OBJECT('id', u.id, 'name', u.username) AS user,
-	  JSON_ARRAYAGG(
+	  IF(COUNT(c.id),JSON_ARRAYAGG(
 		JSON_OBJECT('id',c.id,'content',c.content,'commentId',c.comment_id,'createTime',c.createAt,
-								'user',JSON_OBJECT('id',cu.id,'name',cu.username)
-	  )) comments
+								'user',JSON_OBJECT('id',cu.id,'name',cu.username))
+	),NULL) as comments,
+    IF(COUNT(l.id),JSON_ARRAYAGG(
+        JSON_OBJECT('id',l.id, 'name',l.name)
+      ),NULL) AS labels
     FROM moment m
     LEFT JOIN coderhub_users u ON m.user_id = u.id
     LEFT JOIN comment c ON c.moment_id = m.id
     LEFT JOIN coderhub_users cu ON c.user_id = cu.id
-    WHERE m.id = 2;
+    LEFT JOIN moment_label ml ON m.id = ml.moment_id
+    LEFT JOIN label l ON ml.label_id = l.id
+    WHERE m.id = ?
+    GROUP BY m.id;
     `
     const [result] = await connection.execute(statement, [id])
     return result[0]
@@ -31,10 +37,11 @@ class MomentService {
         SELECT
           m.id AS id, m.content AS content, m.createAt AS createTime, m.updateAt AS updateTime,
           JSON_OBJECT('id', u.id, 'name', u.username) AS user,
-          (SELECT COUNT (*) FROM comment c WHERE c.moment_id = m.id) commentCount
+          (SELECT COUNT(*) FROM comment c WHERE c.moment_id = m.id) commentCount,
+          (SELECT COUNT(*) FROM moment_label ml WHERE ml.moment_id = m.id) labelCount
         FROM moment m
         LEFT JOIN coderhub_users u ON m.user_id = u.id
-        LIMIT 0, 10;`
+        LIMIT ?, ?;`
     const [result] = await connection.execute(statement, [offset, size])
     return result
   }
@@ -64,6 +71,20 @@ class MomentService {
     const statement = `SELECT * FROM moment WHERE id = ? AND user_id = ?`
     const [result] = await connection.execute(statement, [momentId, userId])
     return result.length === 0 ? false : true
+  }
+
+  // 判断标签和动态的关系是否已经在 moment_label 建立联系
+  async hasLabel(momentId, labelId) {
+    const statement = `SELECT * FROM moment_label WHERE moment_id = ? AND label_id = ?`
+    const [result] = await connection.execute(statement, [momentId, labelId])
+    return result.length === 0 ? false : true
+  }
+
+  // 给动态添加标签，在 moment_label 关系表中建立联系
+  async addLabel(momentId, labelId) {
+    const statement = `INSERT INTO moment_label (moment_id, label_id) VALUES (?, ?)`
+    const [result] = await connection.execute(statement, [momentId, labelId])
+    return result
   }
 }
 

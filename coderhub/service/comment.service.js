@@ -48,14 +48,14 @@ class CommentService {
   async getCommentListByMomentId(momentId) {
     const statement = `
       SELECT
-        m.id,
-        m.content,
-        m.comment_id commentId,
-        m.createAt createTime,
+        c.id,
+        c.content,
+        c.comment_id commentId,
+        c.createAt createTime,
         JSON_OBJECT( 'id', u.id, 'name', u.username ) USER 
-      FROM COMMENT m
-      LEFT JOIN coderhub_users u ON u.id = m.user_id 
-      WHERE moment_id = 2
+      FROM COMMENT c
+      LEFT JOIN coderhub_users u ON u.id = c.user_id 
+      WHERE moment_id = ?
       `
     const [result] = await connection.execute(statement, [momentId])
     return result
