@@ -15,6 +15,7 @@ const {
   deleteMoments,
   updateMoment,
   addLabels,
+  fileInfo,
 } = require("../controller/moment.controller")
 
 const momentRouter = new Router({ prefix: "/moment" })
@@ -39,5 +40,7 @@ momentRouter.post(
   verifyLabelExists,
   addLabels
 )
+// 获取动态配图
+momentRouter.get("/images/:filename", fileInfo)
 
 module.exports = momentRouter

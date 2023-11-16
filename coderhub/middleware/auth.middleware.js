@@ -68,7 +68,8 @@ const verifyToken = async (ctx, next) => {
 const verifyPermission = async (ctx, next) => {
   // 获取参数
   const userId = ctx.user.id
-  const momentId = ctx.request.body.momentId || ctx.params.momentId
+  const momentId =
+    ctx.request.body.momentId || ctx.params.momentId || ctx.query.momentId
 
   //查询是否有权限
   try {

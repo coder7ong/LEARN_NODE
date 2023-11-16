@@ -10,15 +10,16 @@ class MomentService {
   async getMomentById(id) {
     const statement = `
     SELECT
-	  m.id AS id, m.content AS content, m.createAt AS createTime, m.updateAt AS updateTime,
-      JSON_OBJECT('id', u.id, 'name', u.username) AS user,
-	  IF(COUNT(c.id),JSON_ARRAYAGG(
-		JSON_OBJECT('id',c.id,'content',c.content,'commentId',c.comment_id,'createTime',c.createAt,
-								'user',JSON_OBJECT('id',cu.id,'name',cu.username))
+	m.id AS id, m.content AS content, m.createAt AS createTime, m.updateAt AS updateTime,
+    JSON_OBJECT('id', u.id, 'name', u.username,'avatarUrl',u.avatar_url) AS user,
+	IF(COUNT(c.id),JSON_ARRAYAGG(
+			JSON_OBJECT('id',c.id,'content',c.content,'commentId',c.comment_id,'createTime',c.createAt,
+									'user',JSON_OBJECT('id',cu.id,'name',cu.username,'avatarUrl',cu.avatar_url))
 	),NULL) as comments,
     IF(COUNT(l.id),JSON_ARRAYAGG(
-        JSON_OBJECT('id',l.id, 'name',l.name)
-      ),NULL) AS labels
+      JSON_OBJECT('id',l.id, 'name',l.name)
+    ),NULL) AS labels,
+    (SELECT JSON_ARRAYAGG(CONCAT('http://localhost:8000/moment/images/',file.filename)) FROM file WHERE m.id = file.moment_id) images
     FROM moment m
     LEFT JOIN coderhub_users u ON m.user_id = u.id
     LEFT JOIN comment c ON c.moment_id = m.id
@@ -38,7 +39,8 @@ class MomentService {
           m.id AS id, m.content AS content, m.createAt AS createTime, m.updateAt AS updateTime,
           JSON_OBJECT('id', u.id, 'name', u.username) AS user,
           (SELECT COUNT(*) FROM comment c WHERE c.moment_id = m.id) commentCount,
-          (SELECT COUNT(*) FROM moment_label ml WHERE ml.moment_id = m.id) labelCount
+          (SELECT COUNT(*) FROM moment_label ml WHERE ml.moment_id = m.id) labelCount,
+          (SELECT JSON_ARRAYAGG(CONCAT('http://localhost:8080/moment/images/',file.filename)) FROM file WHERE m.id = file.moment_id) images
         FROM moment m
         LEFT JOIN coderhub_users u ON m.user_id = u.id
         LIMIT ?, ?;`

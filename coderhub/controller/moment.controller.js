@@ -1,4 +1,9 @@
+const fs = require("fs")
+
 const momentService = require("../service/moment.service")
+const avatarService = require("../service/avatar.service")
+
+const { PICTURE_PATH } = require("../constants/file-path")
 
 class MomentController {
   // 新增动态
@@ -70,6 +75,25 @@ class MomentController {
       code: 200,
       message: "为动态添加标签成功~",
     }
+  }
+
+  // 动态图片的信息
+  async fileInfo(ctx, next) {
+    // 注意修改为 let 下面需要根据客户端传入的尺寸修改 filename的值
+    let { filename } = ctx.params
+    // 不能使用动态 ID 查询因为动态ID有多个图片需要根据 filename 查询
+    const fileInfo = await avatarService.getFileInfoByFilename(filename)
+    const { type } = ctx.query
+
+    // 获取客户端传入的 type
+    const types = ["small", "middle", "large"]
+    // some 判断数组中是否包含其中之一，包含返回 true
+    if (types.some((item) => item === type)) {
+      filename = filename + "-" + type
+    }
+
+    ctx.response.set("Content-Type", fileInfo.mimetype)
+    ctx.body = fs.createReadStream(`${PICTURE_PATH}/${filename}`)
   }
 }
 
