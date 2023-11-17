@@ -1,0 +1,2063 @@
+{
+	"info": {
+		"_postman_id": "34b5afc3-6778-482c-8a30-d4a74a8e8453",
+		"name": "LEARN_NODE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30803330"
+	},
+	"item": [
+		{
+			"name": "服务器开发",
+			"item": [
+				{
+					"name": "02_request对象-url",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:7777/login?username=7ong&password=123456",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "7ong"
+								},
+								{
+									"key": "password",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03_request对象-method",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"7ong\",\r\n    \"password\":123456\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7777/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04_request对象-响应结果",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05_request对象-状态码",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06_request对象-响应header",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11_http文件上传-错误示例",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/Saved Pictures/20220123222213_2899a.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:7777/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12_http文件上传-正确示范",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/Saved Pictures/20220123222213_2899a.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:7777/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Express框架",
+			"item": [
+				{
+					"name": "01_express初体验",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02_中间件-普通中间件",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777",
+							"host": [
+								"localhost"
+							],
+							"port": "7777"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03_中间件-普通中间件-next()",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777",
+							"host": [
+								"localhost"
+							],
+							"port": "7777"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05_中间件-普通和路径中间件混用",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/home",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04_中间件-路径中间件.js Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/home",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07_中间件-路径和路径方法中间件混用",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/home",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08_中间件-连续注册中间件",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/home",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10_中间件应用-抽离json解析",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\":\"iphone 15 pro max\",\r\n    \"price\":10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:7777/product",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11_中间件应用-json解析简写",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"7ong\",\r\n    \"age\":23\r\n}"
+						},
+						"url": {
+							"raw": "localhost:7777/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12_中间件应用-urlencoded解析",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "james",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "1.88",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:7777/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13_中间件应用-解析form-data数据",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "kobe",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:7777/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14_中间件应用-upload.single解析form-data单文件类型数据",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/Saved Pictures/20220123222213_2899a.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:7777/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15_中间件应用-自定义文件信息form-data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/Saved Pictures/20220123222213_2899a.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:7777/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "16_中间件应用-upload.array解析form-data多文件类型数据",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:7777/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "17_中间件应用-非文件类型和文件一起解析",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image1",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/微信图片_20230710172907.jpg"
+								},
+								{
+									"key": "image1",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/Saved Pictures/20220123222213_2899a.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:7777/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "18_中间件应用-非文件类型和文件一起解析-正确写法",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image1",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/Saved Pictures/20220123222213_2899a.jpeg"
+								},
+								{
+									"key": "image1",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/微信图片_20230710172907.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:7777/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "19_中间件应用-保存日志信息",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/login",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "20_request参数解析-params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/user/7ong",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"user",
+								"7ong"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "21_request参数解析-query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/login?username=7ong&password=123456",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "7ong"
+								},
+								{
+									"key": "password",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "22_response响应结果-res.json",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/login?username=7ong&password=123456",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "7ong"
+								},
+								{
+									"key": "password",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "23_路由的使用",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:7777/users/7ong",
+							"host": [
+								"localhost"
+							],
+							"port": "7777",
+							"path": [
+								"users",
+								"7ong"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Koa框架",
+			"item": [
+				{
+					"name": "03_Koa创建服务器",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04_中间件-错误处理",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06_Koa 路由的使用",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07_Koa服务器参数解析",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/login?username=7ong&age=23",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "7ong"
+								},
+								{
+									"key": "age",
+									"value": "23"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08_路由中定义参数获取参数-params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/:7ong",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								":7ong"
+							],
+							"variable": [
+								{
+									"key": "7ong",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "09_路由中定义参数获取参数-query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users?username=7ong&age=23",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "7ong"
+								},
+								{
+									"key": "age",
+									"value": "23"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10_解析参数-json.js",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"7ong\",\r\n    \"age\":23,\r\n    \"height\":180\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11_解析参数-form-data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/Pictures/Saved Pictures/20220123222213_2899a.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12_解析参数-x-www-form-urlencoded",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13_是否为可用路由",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14_解析参数-x-www-form-urlencoded2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "7ong",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "23",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14_Koa 响应数据",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15_Koa 错误处理方式",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "16_Koa 洋葱模型",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "17_Koa 洋葱模型-res.body",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "18_Koa 洋葱模型-res.end",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "koa_vs_express",
+			"item": [
+				{
+					"name": "01_express实现-同步数据",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02_express实现-res.end在next之前",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03_express实现-res.end在next之后",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04_express 实现-异步数据",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05_express 实现-异步数据返回数据放在最后中间件",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06_express 实现-异步请求中间件作为函数",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07_Koa 实现-同步数据",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08_Koa 实现-异步数据",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "09_express实现-res.end",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10_express实现-使用错误 res.body",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000",
+							"host": [
+								"localhost"
+							],
+							"port": "3000"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cookie-session-token",
+			"item": [
+				{
+					"name": "01_登录接口",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02_获取资源接口",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEwLCJ1c2VybmFtZSI6IjdvbmciLCJpYXQiOjE2OTk0OTUyNDcsImV4cCI6MTY5OTQ5ODg0N30.RY1RTMAlwuCokCDlG5EELSmKBxCvm5Uvhy8Yl5bTdZo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/protected",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"protected"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coderhub",
+			"item": [
+				{
+					"name": "用户登录模块",
+					"item": [
+						{
+							"name": "01_用户注册接口",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/users",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "01_密码加密中间件注册用户",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"lili\",\r\n    \"password\":123456\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/users",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "01_用户注册表单验证",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"7ong\",\r\n    \"password\":123456\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/users",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "03_测试校验token接口",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/test",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"test"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "02_用户登录接口生成token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const res = pm.response.json()\r",
+											"// 为 postman 设置全局变量 token 在输入 token 的地方直接输入 {{token}} 即可\r",
+											"pm.globals.set(\"token\",res.token);\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"7ong\",\r\n    \"password\":123456\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "03_修改密码",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\":123456\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/users/updatePassword",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"users",
+										"updatePassword"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "用户动态模块",
+					"item": [
+						{
+							"name": "01_新增用户动态",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"xx动态信息1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/moment",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"moment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "02_获取某一条动态详情",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/moment/2",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"moment",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "03_获取多条动态详情",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/moment?offset=0&size=10",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"moment"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "04_删除某一条动态",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/moment/36",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"moment",
+										"36"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "05_删除多条动态信息",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"momentIds\":[37,38]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/moment/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"moment",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "06_修改动态",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"momentId\":34,\r\n    \"content\":\"封装测试权限中间件之后修改内容测试1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/moment/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"moment",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "07_给动态添加标签",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"labels\":[\"古文\",\"历史\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/moment/7/labels",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"moment",
+										"7",
+										"labels"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "内容评论模块",
+					"item": [
+						{
+							"name": "01_发表评论接口",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"momentId\":9,\r\n    \"content\":\"文学创作实在是太精彩了\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/comment/",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"comment",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "02_回复评论接口",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"momentId\":2,\r\n    \"content\":\"xx回复评论的内容\",\r\n    \"commentId\":6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/comment/reply",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"comment",
+										"reply"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "03_修改评论接口",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"cc登录后修改后自己的评论内容\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/comment/5",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"comment",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "04_删除评论接口",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/comment/4",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"comment",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "05_获取动态下的评论列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/comment?momentId=9",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"comment"
+									],
+									"query": [
+										{
+											"key": "momentId",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "动态标签模块",
+					"item": [
+						{
+							"name": "01_新增动态标签",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"青春\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/label",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"label"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "02_获取标签接口",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/label?offset=0&limit=5",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"label"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "03_获取动态下的标签列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/label/momentLabel?momentId=2",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"label",
+										"momentLabel"
+									],
+									"query": [
+										{
+											"key": "momentId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "上传文件模块",
+					"item": [
+						{
+							"name": "01_上传头像接口",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/C:/Users/Admin/Pictures/Saved Pictures/20220123222213_2899a.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/upload/avatar",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"upload",
+										"avatar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "02_获取用户头像",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/users/2/avatar",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"users",
+										"2",
+										"avatar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "03_上传动态配图",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/Admin/Pictures/carbon/barjs.png"
+										},
+										{
+											"key": "picture",
+											"type": "file",
+											"src": "/C:/Users/Admin/Pictures/carbon/foojs.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/upload/picture?momentId=2",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"upload",
+										"picture"
+									],
+									"query": [
+										{
+											"key": "momentId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "04_获取动态图片",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/moment/images/5e050de270c360d308ffa24e7d981cac",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"moment",
+										"images",
+										"5e050de270c360d308ffa24e7d981cac"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
