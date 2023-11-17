@@ -28,6 +28,13 @@ class UserService {
     const [result] = await connection.execute(statement, [avatarUrl, userId])
     return result
   }
+
+  // 修改密码
+  async updateUserPasswordById(userId, newPassword) {
+    const statement = `UPDATE coderhub_users SET password = ? WHERE id = ?`
+    const [result] = await connection.execute(statement, [newPassword, userId])
+    return result
+  }
 }
 
 module.exports = new UserService()

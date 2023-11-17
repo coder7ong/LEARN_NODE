@@ -20,6 +20,14 @@ class UserController {
     ctx.response.set("Content-Type", avatarInfo.mimetype)
     ctx.body = fs.createReadStream(`${AVATAR_PATH}/${avatarInfo.filename}`)
   }
+
+  // 修改密码
+  async updatePassword(ctx, next) {
+    const userId = ctx.user.id
+    const { password } = ctx.request.body
+    const result = await userService.updateUserPasswordById(userId, password)
+    ctx.body = result
+  }
 }
 
 // 将 UserController 进行实例化操作，并且将实例化对象进行导出
